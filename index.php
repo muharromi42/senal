@@ -6,6 +6,10 @@ if (!isset($_SESSION["login"])) {
     header("Location: login.php");
     exit;
 }
+
+require 'config/koneksi.php';
+
+
 ?>
 
 <!DOCTYPE html>
