@@ -1,3 +1,9 @@
+<?php
+
+$kepayang = query("SELECT * FROM tb_kepayang");
+
+?>
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -24,18 +30,18 @@
                 </tr>
 
                 <?php $i = 1 ?>
-                <?php foreach ($mahasiswa as $row) : ?>
+                <?php foreach ($kepayang as $row) : ?>
                     <tr>
                         <td><?= $i ?></td>
                         <td>
                             <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
                             <a class="btn btn-danger" href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin bang?')">hapus</a>
                         </td>
-                        <td><img src="img/<?= $row["gambar"] ?>" width="50" alt=""></td>
-                        <td><?= $row["nama"] ?></td>
-                        <td><?= $row["nim"] ?></td>
-                        <td><?= $row["email"] ?></td>
-                        <td><?= $row["jurusan"] ?></td>
+                        <td><?= $row["pokmas"] ?></td>
+                        <td><?= $row["kegiatan"] ?></td>
+                        <td><img src="assets/img/<?= $row["foto1"] ?>" width="200" alt=""></td>
+                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="200" alt=""></td>
+                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="200" alt=""></td>
                     </tr>
                     <?php $i++ ?>
                 <?php endforeach; ?>

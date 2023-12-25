@@ -6,8 +6,11 @@ if (!isset($_SESSION["login"])) {
     header("Location: login.php");
     exit;
 }
-
+// memanggil koneksi database
 require 'config/koneksi.php';
+
+// memanggil functions
+require 'config/functions.php';
 
 
 ?>
