@@ -23,7 +23,7 @@ if (isset($_POST["login"])) {
         // set session
         $_SESSION["login"] = true;
 
-        header("Location: index.php");
+        header("Location: index.php?page=dashboard");
         exit;
     }
 
