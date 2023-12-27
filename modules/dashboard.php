@@ -31,9 +31,6 @@
 
                         <p>Desa Kepayang</p>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
                     </a>
@@ -47,9 +44,6 @@
                         <h3>3</h3>
 
                         <p>Desa Medak</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-stats-bars"></i>
                     </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
@@ -65,9 +59,6 @@
 
                         <p>Desa Geronggang</p>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-user-plus"></i>
-                    </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
                     </a>
@@ -82,9 +73,6 @@
 
                         <p>Desa Putak</p>
                     </div>
-                    <div class="icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
                     </a>
@@ -97,9 +85,6 @@
                         <h3>7</h3>
 
                         <p>Desa Muara Merang</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-chart-pie"></i>
                     </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
