@@ -39,8 +39,10 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                     <th>No</th>
                                     <th>Pokmas</th>
                                     <th>Kegiatan</th>
-                                    <th>Dokumentasi</th>
-                                    <th>CSS grade</th>
+                                    <th colspan="3">
+                                        <center>Dokumentasi</center>
+                                    </th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

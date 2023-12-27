@@ -58,6 +58,30 @@ require 'config/functions.php';
                     case 'inmedak';
                         include "modules/input/inMedak.php";
                         break;
+                    case 'ingeronggangk';
+                        include "modules/input/inGeronggang.php";
+                        break;
+                    case 'inputak';
+                        include "modules/input/inPutak.php";
+                        break;
+                    case 'inmuara';
+                        include "modules/input/inMuara.php";
+                        break;
+                    case 'cekepayang':
+                        include "modules/input/ceKepayang.php";
+                        break;
+                    case 'cemedak';
+                        include "modules/input/ceMedak.php";
+                        break;
+                    case 'cegeronggang';
+                        include "modules/input/ceGeronggang.php";
+                        break;
+                    case 'ceputak';
+                        include "modules/input/cePutak.php";
+                        break;
+                    case 'cemuara';
+                        include "modules/input/ceMuara.php";
+                        break;
                     default:
                         echo "<center><h3>Maaf. Halaman Tidak Di Temukan !</h3></center>";
                         break;
@@ -82,12 +106,6 @@ require 'config/functions.php';
 
         <!-- REQUIRED SCRIPTS -->
 
-        <!-- jQuery -->
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap 4 -->
-        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.min.js"></script>
         <!-- jQuery -->
         <script src="plugins/jquery/jquery.min.js"></script>
         <!-- Bootstrap 4 -->
