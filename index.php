@@ -33,6 +33,8 @@ require 'config/functions.php';
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- logo icon tab -->
+    <link rel="shortcut icon" href="assets/img/psda.png">
 </head>
 
 <body class="hold-transition sidebar-mini">
