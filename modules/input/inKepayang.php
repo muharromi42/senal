@@ -33,7 +33,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <table id="table2" class="table table-bordered table-hover">
+                        <table id="table2" class="table table-bordered table-hover" style="font-size: 14px;">
                             <thead>
                                 <tr>
                                     <th>No</th>

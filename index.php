@@ -84,6 +84,8 @@ require 'config/functions.php';
                     case 'cemuara';
                         include "modules/input/ceMuara.php";
                         break;
+                    case 'anggota';
+                        include "modules/anggota/anggota.php";
                     default:
                         echo "<center><h3>Maaf. Halaman Tidak Di Temukan !</h3></center>";
                         break;

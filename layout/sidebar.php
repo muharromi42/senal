@@ -123,6 +123,14 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a href="index.php?page=anggota" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p>
+              Anggota
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
