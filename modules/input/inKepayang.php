@@ -4,59 +4,74 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 
 ?>
 
+<!-- Content Wrapper. Contains page content -->
 <!-- Content Header (Page header) -->
-<div class="content-header">
+<section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Input Data Sekat Kanal Desa Kepayang</h1>
-            </div><!-- /.col -->
+                <h1>Input Data Senal Kepayang</h1>
+            </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="index.php?page=dashboard">Home</a></li>
-                    <li class="breadcrumb-item active">Input Data Senal</li>
+                    <li class="breadcrumb-item active">Input Data Senal Kepayang</li>
                 </ol>
-            </div><!-- /.col -->
-            <table border="1" cellpadding="10" cellspacing="0" class="table table-striped table-hover padding-xl">
-
-                <tr>
-                    <th>No.</th>
-                    <th>Aksi</th>
-                    <th>Gambar</th>
-                    <th>Nama</th>
-                    <th>NIM</th>
-                    <th>Email</th>
-                    <th>Jurusan</th>
-                </tr>
-
-                <?php $i = 1 ?>
-                <?php foreach ($kepayang as $row) : ?>
-                    <tr>
-                        <td><?= $i ?></td>
-                        <td>
-                            <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
-                            <a class="btn btn-danger" href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin bang?')">hapus</a>
-                        </td>
-                        <td><?= $row["pokmas"] ?></td>
-                        <td><?= $row["kegiatan"] ?></td>
-                        <td><img src="assets/img/<?= $row["foto1"] ?>" width="200" alt=""></td>
-                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="200" alt=""></td>
-                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="200" alt=""></td>
-                    </tr>
-                    <?php $i++ ?>
-                <?php endforeach; ?>
-            </table>
-        </div><!-- /.row -->
+            </div>
+        </div>
     </div><!-- /.container-fluid -->
-</div>
-<!-- /.content-header -->
+</section>
 
 <!-- Main content -->
-<div class="content">
+<section class="content">
     <div class="container-fluid">
-
-
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <button>Tambah Data</button>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="table2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Pokmas</th>
+                                    <th>Kegiatan</th>
+                                    <th>Dokumentasi</th>
+                                    <th>CSS grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 1 ?>
+                                <?php foreach ($kepayang as $row) : ?>
+                                    <tr>
+                                        <td><?= $i ?></td>
+                                        <td><?= $row["pokmas"] ?></td>
+                                        <td><?= $row["kegiatan"] ?></td>
+                                        <td><img src="assets/img/<?= $row["foto1"] ?>" width="200" alt=""></td>
+                                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="200" alt=""></td>
+                                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="200" alt=""></td>
+                                        <td>
+                                            <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
+                                            <a class="btn btn-danger" href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin bang?')">hapus</a>
+                                        </td>
+                                    </tr>
+                                    <?php $i++ ?>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
         <!-- /.row -->
     </div>
-    <!-- /.row -->
-</div><!-- /.container-fluid -->
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+<!-- /.content-wrapper -->
