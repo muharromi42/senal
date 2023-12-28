@@ -79,3 +79,42 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 </section>
 <!-- /.content -->
 <!-- /.content-wrapper -->
+<!-- Modal -->
+<div class="modal fade" id="modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title" id="judul"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div id="tampil_data">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Data akan di load menggunakan AJAX -->
+<script>
+    // Tambah admin
+    $('#tombol_tambah').on('click', function() {
+        $.ajax({
+            url: 'apps/input/kepayang/tambah.php',
+            method: 'post',
+            success: function(data) {
+                $('#tampil_data').html(data);
+                document.getElementById("judul").innerHTML = 'Tambah Administrator';
+            }
+        });
+        // Membuka modal
+        $('#modal').modal('show');
+    });
+</script>

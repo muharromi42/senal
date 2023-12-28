@@ -52,40 +52,40 @@ require 'config/functions.php';
                 $page = $_GET['page'];
                 switch ($page) {
                     case 'dashboard':
-                        include "modules/dashboard.php";
+                        include "apps/dashboard/dashboard.php";
                         break;
                     case 'inkepayang':
-                        include "modules/input/inKepayang.php";
+                        include "apps/input/kepayang/inKepayang.php";
                         break;
                     case 'inmedak';
-                        include "modules/input/inMedak.php";
+                        include "apps/input/medak/inMedak.php";
                         break;
                     case 'ingeronggangk';
-                        include "modules/input/inGeronggang.php";
+                        include "apps/input/inGeronggang.php";
                         break;
                     case 'inputak';
-                        include "modules/input/inPutak.php";
+                        include "apps/input/inPutak.php";
                         break;
                     case 'inmuara';
-                        include "modules/input/inMuara.php";
+                        include "apps/input/inMuara.php";
                         break;
                     case 'cekepayang':
-                        include "modules/input/ceKepayang.php";
+                        include "apps/input/ceKepayang.php";
                         break;
                     case 'cemedak';
-                        include "modules/input/ceMedak.php";
+                        include "apps/input/ceMedak.php";
                         break;
                     case 'cegeronggang';
-                        include "modules/input/ceGeronggang.php";
+                        include "apps/input/ceGeronggang.php";
                         break;
                     case 'ceputak';
-                        include "modules/input/cePutak.php";
+                        include "apps/input/cePutak.php";
                         break;
                     case 'cemuara';
-                        include "modules/input/ceMuara.php";
+                        include "apps/input/ceMuara.php";
                         break;
                     case 'anggota';
-                        include "modules/anggota/anggota.php";
+                        include "apps/anggota/anggota.php";
                     default:
                         echo "<center><h3>Maaf. Halaman Tidak Di Temukan !</h3></center>";
                         break;
