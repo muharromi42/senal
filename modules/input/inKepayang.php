@@ -29,16 +29,17 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button>Tambah Data</button>
+                        <button type="button" class="btn btn-success" id="tombol_tambah"><i class="fas fa-plus"></i> Tambah Data</button>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body">
+                    <div class="card-body p-1">
                         <table id="table2" class="table table-bordered table-hover" style="font-size: 14px;">
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Pokmas</th>
-                                    <th>Kegiatan</th>
+                                    <th width="100px">Pokmas</th>
+                                    <th width="200px">Kegiatan</th>
+                                    <th width="50px">Progres</th>
                                     <th colspan="3">
                                         <center>Dokumentasi</center>
                                     </th>
@@ -52,12 +53,13 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><?= $i ?></td>
                                         <td><?= $row["pokmas"] ?></td>
                                         <td><?= $row["kegiatan"] ?></td>
-                                        <td><img src="assets/img/<?= $row["foto1"] ?>" width="200" alt=""></td>
-                                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="200" alt=""></td>
-                                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="200" alt=""></td>
+                                        <td><?= $row["progres"] ?> %</td>
+                                        <td><img src="assets/img/<?= $row["foto1"] ?>" width="150" alt=""></td>
+                                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="150" alt=""></td>
+                                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="150" alt=""></td>
                                         <td>
-                                            <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>">ubah</a> |
-                                            <a class="btn btn-danger" href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin bang?')">hapus</a>
+                                            <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
+                                            <a class="btn btn-danger" href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin bang?')"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>

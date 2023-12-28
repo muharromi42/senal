@@ -137,5 +137,3 @@
   </div>
   <!-- /.sidebar -->
 </aside>
-
-<!-- REQUIRED SCRIPTS -->
