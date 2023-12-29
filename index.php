@@ -38,7 +38,7 @@ require 'config/functions.php';
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- logo icon tab -->
-    <link rel="shortcut icon" href="assets/img/psda.png">
+    <link rel="shortcut icon" href="assets/img/psda_transparan.png">
 </head>
 
 <body class="hold-transition sidebar-mini">

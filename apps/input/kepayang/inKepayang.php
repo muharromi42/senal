@@ -59,7 +59,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><img src="assets/img/<?= $row["foto3"] ?>" width="150" alt=""></td>
                                         <td>
                                             <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
-                                            <a class="btn btn-danger btn-hapus" href="/apps/input/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
+                                            <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>
@@ -104,7 +104,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 
 <!-- Data akan di load menggunakan AJAX -->
 <script>
-    // Tambah admin
+    // Tambah senal
     $('#tombol_tambah').on('click', function() {
         $.ajax({
             url: 'apps/input/kepayang/tambah.php',
@@ -116,5 +116,17 @@ $kepayang = query("SELECT * FROM tb_kepayang");
         });
         // Membuka modal
         $('#modal').modal('show');
+    });
+</script>
+
+<script>
+    // fungsi hapus senal
+    $('.btn-hapus').on('click', function() {
+        konfirmasi = confirm("Yakin nak ngapus bang?")
+        if (konfirmasi) {
+            return true;
+        } else {
+            return false;
+        }
     });
 </script>
