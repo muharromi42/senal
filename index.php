@@ -133,6 +133,8 @@ require 'config/functions.php';
         <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
         <!-- AdminLTE App -->
         <script src="dist/js/adminlte.min.js"></script>
+        <!-- bs-custom-file-input -->
+        <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
         <!-- Page specific script -->
         <script>
             $(function() {
@@ -153,6 +155,13 @@ require 'config/functions.php';
                 });
             });
         </script>
+        <!-- file input -->
+        <script>
+            $(function() {
+                bsCustomFileInput.init();
+            });
+        </script>
+
 </body>
 
 </html>

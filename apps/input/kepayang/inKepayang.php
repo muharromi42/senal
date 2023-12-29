@@ -111,7 +111,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             method: 'post',
             success: function(data) {
                 $('#tampil_data').html(data);
-                document.getElementById("judul").innerHTML = 'Tambah Administrator';
+                document.getElementById("judul").innerHTML = 'Tambah Data Progres Senal Kepayang';
             }
         });
         // Membuka modal
