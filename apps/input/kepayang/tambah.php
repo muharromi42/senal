@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <form action="apps/input/kepayang/tambah.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
