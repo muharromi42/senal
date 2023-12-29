@@ -33,6 +33,8 @@ require 'config/functions.php';
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- jQuery -->
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
+    <script src="plugins/jquery/jquery-1.11.1.min.js"></script>
+    <script src="plugins/jquery/jquery-2.2.3.min.js"></script>
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- logo icon tab -->

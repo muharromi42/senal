@@ -59,7 +59,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><img src="assets/img/<?= $row["foto3"] ?>" width="150" alt=""></td>
                                         <td>
                                             <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
-                                            <a class="btn btn-danger" href="hapus.php?id=<?= $row["id"] ?>" onclick="return confirm('yakin bang?')"><i class="fas fa-trash"></i></a>
+                                            <a class="btn btn-danger btn-hapus" href="/apps/input/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>

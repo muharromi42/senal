@@ -1,36 +1,16 @@
 <?php
-// memulai sesi
 session_start();
-
-// memanggil koneksi
 include '../../../config/koneksi.php';
-
-if (!isset($_SESSION["login"])) {
-    header("Location: login.php");
-    exit;
-}
-
-function hapus($id)
-{
-    global $conn;
-    mysqli_query($conn, "DELETE FROM tb_kepayang WHERE id = $id");
-    return mysqli_affected_rows($conn);
-}
+mysqli_query($conn, "START TRANSACTION");
 
 $id = $_GET['id'];
 
-if (hapus($id) > 0) {
-    echo "
-            <script>
-                alert('data berhasil dihapus');
-                document.location.href = 'index.php';
-            </script>
-        ";
+$hapus_kegiatan = mysqli_query($conn, "DELETE from tbl_kepayang where id='$id'");
+
+if ($hapus_kegiatan) {
+    mysqli_query($conn, "COMMIT");
+    header("Location:../../../index.php?page=inkepayang&hapus=berhasil");
 } else {
-    echo "
-            <script>
-                alert('data gagal dihapus');
-                document.location.href = 'index.php';
-            </script>
-        ";
+    mysqli_query($conn, "ROLLBACK");
+    header("Location:../../index.php?page=data_kegiatan&hapus=gagal");
 }
