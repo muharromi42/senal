@@ -16,48 +16,45 @@ session_start();
                 <input type="email" name="progres" class="form-control" placeholder="Masukkan Progres" required>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="form-group">
                 <label>Kegiatan :</label>
                 <textarea type="text" name="kegiatan" rows="3" class="form-control" value="" placeholder="Masukkan Kegiatan" required></textarea>
             </div>
         </div>
     </div>
-    <div class="form-group">
-        <label for="">Dokumentasi :</label>
-        <div class="input-group mb-2 ">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input form-control" name="file1" id="file1">
-                <label class="custom-file-label" id="file_name1"></label>
-            </div>
-        </div>
-        <img id="preview1" style="max-width: 100%; max-height: 200px; margin-top: 10px;">
-        <div class="input-group mb-2 ">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="foto2">
-                <label class="custom-file-label" for="foto2">Pilih Gambar</label>
-            </div>
-        </div>
-        <div class="input-group mb-2 ">
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="foto3">
-                <label class="custom-file-label" for="foto3">Pilih Gambar</label>
-            </div>
-        </div>
-        <input type="file" name="file1" id="file1" style="display: none;">
-        <button type="button" id="pilih_foto1">Choose Image 1</button>
-        <img id="preview1" style="max-width: 100%; max-height: 200px; margin-top: 10px;">
-        <input type="text" id="file_name1" readonly>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Dokumentasi :</label>
+                <div class="input-group">
+                    <input type="file" name="file1" id="file1" style="display: none;">
+                    <div class="input-group my-3">
+                        <button type="button" id="pilih_foto1" class="browse btn btn-primary">Pilih gambar</button>
+                        <input type="text" id="file_name1" readonly class="ml-2">
+                    </div>
+                    <img id="preview1" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
+                </div>
 
-        <input type="file" name="file2" id="file2" style="display: none;">
-        <button type="button" id="pilih_foto2">Choose Image 2</button>
-        <img id="preview2" style="max-width: 100%; max-height: 200px; margin-top: 10px;">
-        <input type="text" id="file_name2" readonly>
+                <div class="input-group">
+                    <input type="file" name="file2" id="file2" style="display: none;">
+                    <div class="input-group my-3">
+                        <button type="button" id="pilih_foto2" class="browse btn btn-primary">Pilih gambar</button>
+                        <input type="text" id="file_name2" readonly class="ml-2">
+                    </div>
+                    <img id="preview2" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
+                </div>
 
-        <input type="file" name="file3" id="file3" style="display: none;">
-        <button type="button" id="pilih_foto3">Choose Image 3</button>
-        <img id="preview3" style="max-width: 100%; max-height: 200px; margin-top: 10px;">
-        <input type="text" id="file_name3" readonly>
+                <div class="input-group">
+                    <input type="file" name="file3" id="file3" style="display: none;">
+                    <div class="input-group my-3">
+                        <button type="button" id="pilih_foto3" class="browse btn btn-primary">Pilih gambar</button>
+                        <input type="text" id="file_name3" readonly class="ml-2">
+                    </div>
+                    <img id="preview3" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
+                </div>
+            </div>
+        </div>
     </div>
 </form>
 
