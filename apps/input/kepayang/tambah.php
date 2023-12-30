@@ -27,10 +27,11 @@ session_start();
         <label for="">Dokumentasi :</label>
         <div class="input-group mb-2 ">
             <div class="custom-file">
-                <input type="file" class="custom-file-input form-control" id="foto1">
-                <label class="custom-file-label" for="foto1"></label>
+                <input type="file" class="custom-file-input form-control" name="file1" id="file1">
+                <label class="custom-file-label" id="file_name1"></label>
             </div>
         </div>
+        <img id="preview1" style="max-width: 100%; max-height: 200px; margin-top: 10px;">
         <div class="input-group mb-2 ">
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="foto2">

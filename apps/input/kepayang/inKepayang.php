@@ -29,6 +29,16 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
+                        <?php
+                        // jika tombol hapus ditekan muncul notif berhasil
+                        if (isset($_GET['hapus'])) {
+                            if ($_GET['hapus'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat Kanal Telah Dihapus</div>";
+                            } else if ($_GET['hapus'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Dihapus</div>";
+                            }
+                        }
+                        ?>
                         <button type="button" class="btn btn-success" id="tombol_tambah"><i class="fas fa-plus"></i> Tambah Data</button>
                     </div>
                     <!-- /.card-header -->

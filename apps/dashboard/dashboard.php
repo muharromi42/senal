@@ -27,9 +27,9 @@
                 <!-- small card -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>3</h3>
+                        <h3 class="d-flex justify-content-center ">3</h3>
 
-                        <p>Desa Kepayang</p>
+                        <p class="d-flex justify-content-center ">Desa Kepayang</p>
                     </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
