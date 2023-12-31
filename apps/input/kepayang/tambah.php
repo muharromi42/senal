@@ -1,5 +1,19 @@
 <?php
 session_start();
+if (isset($_POST['tambah_senal'])) {
+    var_dump('entah');
+    // memanggil koneksi database
+    include '../../../config/koneksi.php';
+
+    // fungsi untuk mencegah karakter inputan tidak sesuai
+    function input($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+}
 ?>
 
 <form action="apps/input/kepayang/tambah.php" method="post" enctype="multipart/form-data">
@@ -13,7 +27,7 @@ session_start();
         <div class="col-sm-6">
             <div class="form-group">
                 <label>Progres :</label>
-                <input type="email" name="progres" class="form-control" placeholder="Masukkan Progres" required>
+                <input type="text" name="progres" class="form-control" placeholder="Masukkan Progres" required>
             </div>
         </div>
         <div class="col-sm-12">
@@ -55,6 +69,7 @@ session_start();
                 </div>
             </div>
         </div>
+        <button type="submit" class="btn btn-success" name="tambah_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button>
     </div>
 </form>
 

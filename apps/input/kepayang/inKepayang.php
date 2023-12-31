@@ -105,6 +105,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             </div>
 
             <div class="modal-footer">
+                <!-- <button type="submit" class="btn btn-success" name="tambah_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button> -->
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
             </div>
 
