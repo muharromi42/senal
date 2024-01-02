@@ -157,7 +157,7 @@ if (isset($_POST["login"])) {
         <form class="p-3 mt-3" method="POST" action="">
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
-                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="text" name="username" id="username" placeholder="Username" autofocus>
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
