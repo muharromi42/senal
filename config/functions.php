@@ -13,3 +13,40 @@ function query($query)
     }
     return $rows;
 }
+
+// fungsi upload gambar
+function upload()
+{
+    $namaFile = $_FILES['file1']['name'];
+    $error = $_FILES['file1']['error'];
+    $tmpName = $_FILES['file1']['tmp_name'];
+
+    // cek apakah tidak ada gambar yg di upload
+    if ($error === 4) {
+        echo "<script>
+                alert('pilih gambar terlebih dahulu')
+            </script>";
+        return false;
+    }
+
+    // cek apakah file gambar atau bukan
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+                alert('yang anda upload bukan gambar')
+            </script>";
+        return false;
+    }
+
+    // lolos pengecekan gambar siap di upload
+    // generate nama gambar baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+
+    move_uploaded_file($tmpName, '../../../assets/dokumentasi/' . $namaFileBaru);
+    return $namaFileBaru;
+}

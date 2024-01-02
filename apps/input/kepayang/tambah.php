@@ -1,7 +1,10 @@
 <?php
 session_start();
+
+// memanggil file functions
+include '../../../config/functions.php';
+
 if (isset($_POST['tambah_senal'])) {
-    var_dump('entah');
     // memanggil koneksi database
     include '../../../config/koneksi.php';
 
@@ -12,6 +15,30 @@ if (isset($_POST['tambah_senal'])) {
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
+    }
+
+    // cek apakah ada kiriman form dri method POST
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // memulai transaksi
+        mysqli_query($conn, "START TRANSACTION");
+
+        $pokmas = input($_POST["pokmas"]);
+        $progres = input($_POST["progres"]);
+        $kegiatan = input($_POST["kegiatan"]);
+
+        $gambar1 = upload();
+        if (!$gambar1) {
+            return false;
+        }
+
+        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$progres','$kegiatan','$gambar1','','')";
+
+        $simpan = mysqli_query($conn, $query);
+
+        if ($simpan) {
+            mysqli_query($conn, "COMMIT");
+        }
     }
 }
 ?>
