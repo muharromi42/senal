@@ -30,6 +30,14 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                 <div class="card">
                     <div class="card-header">
                         <?php
+                        // jika menambahkan data sekat kanal maka akan muncul notif berhasil
+                        if (isset($_GET['add'])) {
+                            if ($_GET['add'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat kanal Telah Disimpan</div>";
+                            } else if ($_GET['add'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Disimpan</div>";
+                            }
+                        }
                         // jika tombol hapus ditekan muncul notif berhasil
                         if (isset($_GET['hapus'])) {
                             if ($_GET['hapus'] == 'berhasil') {
@@ -50,7 +58,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                     <th width="100px">Pokmas</th>
                                     <th width="200px">Kegiatan</th>
                                     <th width="50px">Progres</th>
-                                    <th colspan="3">
+                                    <th colspan="2">
                                         <center>Dokumentasi</center>
                                     </th>
                                     <th>Aksi</th>
@@ -64,9 +72,8 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><?= $row["pokmas"] ?></td>
                                         <td><?= $row["kegiatan"] ?></td>
                                         <td><?= $row["progres"] ?> %</td>
-                                        <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="150" alt=""></td>
-                                        <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="150" alt=""></td>
-                                        <td><img src="assets/dokumentasi/<?= $row["foto3"] ?>" width="150" alt=""></td>
+                                        <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="200" alt=""></td>
+                                        <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                         <td>
                                             <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
                                             <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>

@@ -35,17 +35,14 @@ if (isset($_POST['tambah_senal'])) {
         if (!$gambar2) {
             return false;
         }
-        $gambar3 = upload3();
-        if (!$gambar3) {
-            return false;
-        }
 
-        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2','$gambar3')";
+        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
 
         $simpan = mysqli_query($conn, $query);
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
+            header("Location:../../../index.php?page=inkepayang&add=berhasil");
         }
     }
 }
@@ -93,15 +90,6 @@ if (isset($_POST['tambah_senal'])) {
                     </div>
                     <img id="preview2" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
                 </div>
-
-                <div class="input-group">
-                    <input type="file" name="file3" id="file3" style="display: none;">
-                    <div class="input-group my-3">
-                        <button type="button" id="pilih_foto3" class="browse btn btn-primary">Pilih gambar</button>
-                        <input type="text" id="file_name3" readonly class="ml-2">
-                    </div>
-                    <img id="preview3" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
-                </div>
             </div>
         </div>
         <button type="submit" class="btn btn-success" name="tambah_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button>
@@ -127,10 +115,6 @@ if (isset($_POST['tambah_senal'])) {
         file.trigger("click");
     });
 
-    $(document).on("click", "#pilih_foto3", function() {
-        var file = $(this).parents().find("#file3");
-        file.trigger("click");
-    });
 
     // Function to handle file input change
     $('input[type="file"]').change(function(e) {
