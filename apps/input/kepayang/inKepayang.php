@@ -65,8 +65,8 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><?= $row["kegiatan"] ?></td>
                                         <td><?= $row["progres"] ?> %</td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="150" alt=""></td>
-                                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="150" alt=""></td>
-                                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="150" alt=""></td>
+                                        <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="150" alt=""></td>
+                                        <td><img src="assets/dokumentasi/<?= $row["foto3"] ?>" width="150" alt=""></td>
                                         <td>
                                             <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
                                             <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>

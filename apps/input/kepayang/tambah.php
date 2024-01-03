@@ -27,12 +27,20 @@ if (isset($_POST['tambah_senal'])) {
         $progres = input($_POST["progres"]);
         $kegiatan = input($_POST["kegiatan"]);
 
-        $gambar1 = upload();
+        $gambar1 = upload1();
         if (!$gambar1) {
             return false;
         }
+        $gambar2 = upload2();
+        if (!$gambar2) {
+            return false;
+        }
+        $gambar3 = upload3();
+        if (!$gambar3) {
+            return false;
+        }
 
-        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$progres','$kegiatan','$gambar1','','')";
+        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2','$gambar3')";
 
         $simpan = mysqli_query($conn, $query);
 
