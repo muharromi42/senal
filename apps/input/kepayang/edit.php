@@ -58,12 +58,20 @@ if (isset($_POST['edit_senal'])) {
     }
 }
 ?>
+
+<?php
+include '../../../config/koneksi.php';
+$id = $_POST["id"];
+$query = "SELECT * FROM tb_kepayang WHERE id = $id LIMIT 1";
+$hasil = mysqli_query($conn, $query);
+$data = mysqli_fetch_array($hasil);
+?>
 <form action="apps/input/kepayang/edit.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
                 <label>Pokmas :</label>
-                <input type="text" name="pokmas" class="form-control" placeholder="Masukan Nama Pokmas" required>
+                <input type="text" name="pokmas" class="form-control" value="<?php echo $data['pokmas']; ?>" placeholder="Masukan Nama Pokmas" required>
             </div>
         </div>
         <div class="col-sm-6">
