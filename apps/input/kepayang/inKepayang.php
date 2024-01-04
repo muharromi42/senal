@@ -38,6 +38,14 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                 echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Disimpan</div>";
                             }
                         }
+                        // Jika tombol edit berhasil maka akan muncul notif
+                        if (isset($_GET['edit'])) {
+                            if ($_GET['edit'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat Kanal Telah Diupdate</div>";
+                            } else if ($_GET['edit'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Diupdate</div>";
+                            }
+                        }
                         // jika tombol hapus ditekan muncul notif berhasil
                         if (isset($_GET['hapus'])) {
                             if ($_GET['hapus'] == 'berhasil') {
@@ -75,7 +83,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="200" alt=""></td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                         <td>
-                                            <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
+                                            <button type="button" class="tombol_edit btn btn-warning" id="<?php echo $data['id']; ?>"><i class="fas fa-edit"></i></button> |
                                             <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
@@ -130,6 +138,26 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             success: function(data) {
                 $('#tampil_data').html(data);
                 document.getElementById("judul").innerHTML = 'Tambah Data Progres Senal Kepayang';
+            }
+        });
+        // Membuka modal
+        $('#modal').modal('show');
+    });
+</script>
+
+<script>
+    // Edit Mahasiswa
+    $('.tombol_edit').on('click', function() {
+        var id = $(this).attr("id");
+        $.ajax({
+            url: 'apps/input/kepayang/edit.php',
+            method: 'post',
+            data: {
+                id: id
+            },
+            success: function(data) {
+                $('#tampil_data').html(data);
+                document.getElementById("judul").innerHTML = 'Edit Sekat Kanal';
             }
         });
         // Membuka modal

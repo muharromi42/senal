@@ -1,11 +1,12 @@
 <?php
 session_start();
 
-// memanggil file functions
+// memanggil file functions 
 include '../../../config/functions.php';
 
-if (isset($_POST['tambah_senal'])) {
-    // memanggil koneksi database
+if (isset($_POST['edit_senal'])) {
+
+    //memanggil koneksi database
     include '../../../config/koneksi.php';
 
     // fungsi untuk mencegah karakter inputan tidak sesuai
@@ -23,6 +24,7 @@ if (isset($_POST['tambah_senal'])) {
         // memulai transaksi
         mysqli_query($conn, "START TRANSACTION");
 
+
         $pokmas = input($_POST["pokmas"]);
         $progres = input($_POST["progres"]);
         $kegiatan = input($_POST["kegiatan"]);
@@ -36,7 +38,13 @@ if (isset($_POST['tambah_senal'])) {
             return false;
         }
 
-        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
+        $query = "UPDATE tb_kepayang SET 
+            pokmas = '$pokmas',
+            kegiatan = '$kegiatan',
+            progres = '$progres',
+            gambar1 = '$gambar1',
+            gambar2 = '$gambar2'
+            WHERE id = $id";
 
         $simpan = mysqli_query($conn, $query);
 
@@ -50,8 +58,7 @@ if (isset($_POST['tambah_senal'])) {
     }
 }
 ?>
-
-<form action="apps/input/kepayang/tambah.php" method="post" enctype="multipart/form-data">
+<form action="apps/input/kepayang/edit.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
@@ -95,7 +102,7 @@ if (isset($_POST['tambah_senal'])) {
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-success" name="tambah_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button>
+        <button type="submit" class="btn btn-success" name="edit_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button>
     </div>
 </form>
 
