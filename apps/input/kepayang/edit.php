@@ -1,14 +1,16 @@
 <?php
-session_start();
+// Import file koneksi dan fungsi query
+include('../../../config/koneksi.php'); // Sesuaikan dengan nama file koneksi Anda
+include('../../../config/functions.php'); // Sesuaikan dengan nama file fungsi query Anda
 
-// memanggil file functions 
-include '../../../config/functions.php';
+
+// Ambil ID dari AJAX request
+$id = $_POST['id'];
+
+// Query untuk mengambil data berdasarkan ID
+$data = query("SELECT * FROM tb_kepayang WHERE id = $id")[0];
 
 if (isset($_POST['edit_senal'])) {
-
-    //memanggil koneksi database
-    include '../../../config/koneksi.php';
-
     // fungsi untuk mencegah karakter inputan tidak sesuai
     function input($data)
     {
@@ -17,7 +19,6 @@ if (isset($_POST['edit_senal'])) {
         $data = htmlspecialchars($data);
         return $data;
     }
-
     // cek apakah ada kiriman form dri method POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -50,7 +51,7 @@ if (isset($_POST['edit_senal'])) {
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
-            header("Location:../../../index.php?page=inkepayang&add=berhasil");
+            header("Location:../../../index.php?page=inkepayang&edit=berhasil");
         } else {
             mysqli_query($conn, "ROLLBACK");
             header("Location:../../../index.php?page=inkepayang&add=gagal");
@@ -59,59 +60,46 @@ if (isset($_POST['edit_senal'])) {
 }
 ?>
 
-<?php
-include '../../../config/koneksi.php';
-$id = $_POST["id"];
-$query = "SELECT * FROM tb_kepayang WHERE id = $id LIMIT 1";
-$hasil = mysqli_query($conn, $query);
-$data = mysqli_fetch_array($hasil);
-?>
-<form action="apps/input/kepayang/edit.php" method="post" enctype="multipart/form-data">
+<!-- Formulir Edit Data -->
+<form action="apps/input/kepayang/proses_edit.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="<?= $data['id']; ?>">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                <label>Pokmas :</label>
-                <input type="text" name="pokmas" class="form-control" value="<?php echo $data['pokmas']; ?>" placeholder="Masukan Nama Pokmas" required>
+                <label for="pokmas">Pokmas:</label>
+                <input type="text" class="form-control" name="pokmas" value="<?= $data['pokmas']; ?>">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group">
-                <label>Progres :</label>
-                <input type="text" name="progres" class="form-control" placeholder="Masukkan Progres" required>
+                <label for="progres">Progres:</label>
+                <input type="text" class="form-control" name="progres" value="<?= $data['progres']; ?>">
             </div>
         </div>
         <div class="col-sm-12">
             <div class="form-group">
-                <label>Kegiatan :</label>
-                <textarea type="text" name="kegiatan" rows="3" class="form-control" value="" placeholder="Masukkan Kegiatan" required></textarea>
+                <label for="kegiatan">Kegiatan:</label>
+                <textarea type="text" class="form-control" name="kegiatan" rows="3"><?= $data['kegiatan']; ?></textarea>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <div class="form-group">
-                <label for="">Dokumentasi :</label>
-                <div class="input-group">
-                    <input type="file" name="file1" id="file1" style="display: none;">
-                    <div class="input-group my-3">
-                        <button type="button" id="pilih_foto1" class="browse btn btn-primary">Pilih gambar</button>
-                        <input type="text" id="file_name1" readonly class="ml-2">
-                    </div>
-                    <img id="preview1" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
-                </div>
 
-                <div class="input-group">
-                    <input type="file" name="file2" id="file2" style="display: none;">
-                    <div class="input-group my-3">
-                        <button type="button" id="pilih_foto2" class="browse btn btn-primary">Pilih gambar</button>
-                        <input type="text" id="file_name2" readonly class="ml-2">
-                    </div>
-                    <img id="preview2" style="max-width: 100%; max-height: 300px; margin-top: 10px;">
-                </div>
-            </div>
         </div>
-        <button type="submit" class="btn btn-success" name="edit_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button>
     </div>
+
+    <div class="form-group">
+        <label for="foto1">Foto 1:</label>
+        <input type="file" class="form-control" name="foto1">
+        <img src="assets/dokumentasi/<?= $data['foto1']; ?>" width="200" alt="">
+    </div>
+    <div class="form-group">
+        <label for="foto2">Foto 2:</label>
+        <input type="file" class="form-control" name="foto2">
+        <img src="assets/dokumentasi/<?= $data['foto2']; ?>" width="200" alt="">
+    </div>
+    <button type="submit" class="btn btn-success" name="edit_senal" id="submit"><i class="fas fa-edit"></i>Update Data</button>
 </form>
 
 <style>

@@ -83,7 +83,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="200" alt=""></td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                         <td>
-                                            <button type="button" class="tombol_edit btn btn-warning" id="<?php echo $data['id']; ?>"><i class="fas fa-edit"></i></button> |
+                                            <button type="button" class="tombol_edit btn btn-warning" id="<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></button> |
                                             <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
