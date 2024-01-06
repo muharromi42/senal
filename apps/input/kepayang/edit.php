@@ -43,9 +43,9 @@ if (isset($_POST['edit_senal'])) {
             pokmas = '$pokmas',
             kegiatan = '$kegiatan',
             progres = '$progres',
-            gambar1 = '$gambar1',
-            gambar2 = '$gambar2'
-            WHERE id = $id";
+            foto1 = '$gambar1',
+            foto2 = '$gambar2'
+            WHERE id = '$id';";
 
         $simpan = mysqli_query($conn, $query);
 
@@ -61,7 +61,7 @@ if (isset($_POST['edit_senal'])) {
 ?>
 
 <!-- Formulir Edit Data -->
-<form action="apps/input/kepayang/proses_edit.php" method="post" enctype="multipart/form-data">
+<form action="apps/input/kepayang/edit.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $data['id']; ?>">
     <div class="row">
         <div class="col-sm-6">
@@ -85,21 +85,29 @@ if (isset($_POST['edit_senal'])) {
     </div>
     <div class="row">
         <div class="col-sm-12">
+            <div class="form-group">
+                <label for="">Dokumentasi :</label>
+                <div class="input-group">
+                    <input type="file" name="file1" id="file1" style="display: none;">
+                    <div class="input-group my-3">
+                        <button type="button" id="pilih_foto1" class="browse btn btn-primary">Pilih gambar</button>
+                        <input type="text" id="file_name1" readonly class="ml-2">
+                    </div>
+                    <img src="assets/dokumentasi/<?= $data['foto1']; ?>" style="max-width: 100%; max-height: 300px; margin-top: 10px;" alt="" id="preview1">
+                </div>
 
+                <div class="input-group">
+                    <input type="file" name="file2" id="file2" style="display: none;">
+                    <div class="input-group my-3">
+                        <button type="button" id="pilih_foto2" class="browse btn btn-primary">Pilih gambar</button>
+                        <input type="text" id="file_name2" readonly class="ml-2">
+                    </div>
+                    <img src="assets/dokumentasi/<?= $data['foto2']; ?>" style="max-width: 100%; max-height: 300px; margin-top: 10px;" alt="" id="preview2">
+                </div>
+            </div>
         </div>
+        <button type="submit" class="btn btn-success" name="edit_senal" id="submit"><i class="fas fa-edit"></i>Update Data</button>
     </div>
-
-    <div class="form-group">
-        <label for="foto1">Foto 1:</label>
-        <input type="file" class="form-control" name="foto1">
-        <img src="assets/dokumentasi/<?= $data['foto1']; ?>" width="200" alt="">
-    </div>
-    <div class="form-group">
-        <label for="foto2">Foto 2:</label>
-        <input type="file" class="form-control" name="foto2">
-        <img src="assets/dokumentasi/<?= $data['foto2']; ?>" width="200" alt="">
-    </div>
-    <button type="submit" class="btn btn-success" name="edit_senal" id="submit"><i class="fas fa-edit"></i>Update Data</button>
 </form>
 
 <style>
