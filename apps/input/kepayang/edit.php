@@ -29,15 +29,32 @@ if (isset($_POST['edit_senal'])) {
         $pokmas = input($_POST["pokmas"]);
         $progres = input($_POST["progres"]);
         $kegiatan = input($_POST["kegiatan"]);
+        // Ambil data gambar lama
+        $gambarLama1 = $data['foto1'];
+        $gambarLama2 = $data['foto2'];
 
-        $gambar1 = upload1();
-        if (!$gambar1) {
-            return false;
+        // Cek apakah file1 diisi atau tidak
+        if ($_FILES['file1']['size'] > 0) {
+            // Jika diisi, upload gambar baru
+            $gambar1 = upload1();
+            if (!$gambar1) {
+                return false;
+            }
+        } else {
+            // Jika tidak diisi, gunakan gambar lama
+            $gambar1 = $gambarLama1;
         }
-        $gambar2 = upload2();
-        if (!$gambar2) {
-            return false;
+
+        // Lakukan hal yang sama untuk file2
+        if ($_FILES['file2']['size'] > 0) {
+            $gambar2 = upload2();
+            if (!$gambar2) {
+                return false;
+            }
+        } else {
+            $gambar2 = $gambarLama2;
         }
+
 
         $query = "UPDATE tb_kepayang SET 
             pokmas = '$pokmas',
