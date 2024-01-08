@@ -62,7 +62,8 @@ function upload2()
     // cek apakah tidak ada gambar yg di upload
     if ($error === 4) {
         echo "<script>
-                alert('pilih gambar terlebih dahulu')
+                alert('pilih gambar terlebih dahulu');
+                window.location.href = '../../../index.php?page=inkepayang';
             </script>";
         return false;
     }

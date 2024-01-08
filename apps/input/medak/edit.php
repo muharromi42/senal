@@ -84,13 +84,13 @@ if (isset($_POST['edit_senal'])) {
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="pokmas">Pokmas:</label>
-                <input type="text" class="form-control" name="pokmas" value="<?= $data['pokmas']; ?>" autocomplete="off">
+                <input type="text" class="form-control" name="pokmas" value="<?= $data['pokmas']; ?>">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="progres">Progres:</label>
-                <input type="text" class="form-control" name="progres" value="<?= $data['progres']; ?>" autocomplete="off">
+                <input type="text" class="form-control" name="progres" value="<?= $data['progres']; ?>">
             </div>
         </div>
         <div class="col-sm-12">

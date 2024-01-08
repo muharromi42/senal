@@ -60,13 +60,13 @@ if (isset($_POST['tambah_senal'])) {
         <div class="col-sm-6">
             <div class="form-group">
                 <label>Pokmas :</label>
-                <input type="text" name="pokmas" class="form-control" placeholder="Masukan Nama Pokmas" required>
+                <input type="text" name="pokmas" class="form-control" placeholder="Masukan Nama Pokmas" required autocomplete="off">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group">
                 <label>Progres :</label>
-                <input type="text" name="progres" class="form-control" placeholder="Masukkan Progres" required>
+                <input type="text" name="progres" class="form-control" placeholder="Masukkan Progres" required autocomplete="off">
             </div>
         </div>
         <div class="col-sm-12">

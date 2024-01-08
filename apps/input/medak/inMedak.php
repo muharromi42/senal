@@ -1,6 +1,6 @@
 <?php
 
-$kepayang = query("SELECT * FROM tb_kepayang");
+$kepayang = query("SELECT * FROM tb_medak");
 
 ?>
 
@@ -29,6 +29,32 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
+                        <?php
+                        // jika menambahkan data sekat kanal maka akan muncul notif berhasil
+                        if (isset($_GET['add'])) {
+                            if ($_GET['add'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat kanal Telah Disimpan</div>";
+                            } else if ($_GET['add'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Disimpan</div>";
+                            }
+                        }
+                        // Jika tombol edit berhasil maka akan muncul notif
+                        if (isset($_GET['edit'])) {
+                            if ($_GET['edit'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat Kanal Telah Diupdate</div>";
+                            } else if ($_GET['edit'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Diupdate</div>";
+                            }
+                        }
+                        // jika tombol hapus ditekan muncul notif berhasil
+                        if (isset($_GET['hapus'])) {
+                            if ($_GET['hapus'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat Kanal Telah Dihapus</div>";
+                            } else if ($_GET['hapus'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Dihapus</div>";
+                            }
+                        }
+                        ?>
                         <button type="button" class="btn btn-success" id="tombol_tambah"><i class="fas fa-plus"></i> Tambah Data</button>
                     </div>
                     <!-- /.card-header -->
@@ -40,7 +66,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                     <th width="100px">Pokmas</th>
                                     <th width="200px">Kegiatan</th>
                                     <th width="50px">Progres</th>
-                                    <th colspan="3">
+                                    <th colspan="2">
                                         <center>Dokumentasi</center>
                                     </th>
                                     <th>Aksi</th>
@@ -54,12 +80,11 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><?= $row["pokmas"] ?></td>
                                         <td><?= $row["kegiatan"] ?></td>
                                         <td><?= $row["progres"] ?> %</td>
-                                        <td><img src="assets/img/<?= $row["foto1"] ?>" width="150" alt=""></td>
-                                        <td><img src="assets/img/<?= $row["foto2"] ?>" width="150" alt=""></td>
-                                        <td><img src="assets/img/<?= $row["foto3"] ?>" width="150" alt=""></td>
+                                        <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="200" alt=""></td>
+                                        <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                         <td>
-                                            <a class="btn btn-warning" href="ubah.php?id=<?= $row["id"] ?>"><i class="fas fa-edit"></i></a> |
-                                            <a class="btn btn-danger btn-hapus" href="hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
+                                            <button type="button" class="tombol_edit btn btn-warning" id="<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></button> |
+                                            <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>
@@ -95,6 +120,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             </div>
 
             <div class="modal-footer">
+                <!-- <button type="submit" class="btn btn-success" name="tambah_senal" id="submit"><i class="fas fa-plus"></i>Tambah Data</button> -->
                 <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
             </div>
 
@@ -104,14 +130,14 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 
 <!-- Data akan di load menggunakan AJAX -->
 <script>
-    // Tambah admin
+    // Tambah senal
     $('#tombol_tambah').on('click', function() {
         $.ajax({
             url: 'apps/input/kepayang/tambah.php',
             method: 'post',
             success: function(data) {
                 $('#tampil_data').html(data);
-                document.getElementById("judul").innerHTML = 'Tambah Administrator';
+                document.getElementById("judul").innerHTML = 'Tambah Data Progres Senal Kepayang';
             }
         });
         // Membuka modal
@@ -120,9 +146,29 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 </script>
 
 <script>
-    // fungsi hapus mahasiswa
+    // Edit Mahasiswa
+    $('.tombol_edit').on('click', function() {
+        var id = $(this).attr("id");
+        $.ajax({
+            url: 'apps/input/kepayang/edit.php',
+            method: 'post',
+            data: {
+                id: id
+            },
+            success: function(data) {
+                $('#tampil_data').html(data);
+                document.getElementById("judul").innerHTML = 'Edit Sekat Kanal';
+            }
+        });
+        // Membuka modal
+        $('#modal').modal('show');
+    });
+</script>
+
+<script>
+    // fungsi hapus senal
     $('.btn-hapus').on('click', function() {
-        konfirmasi = confirm("Yakin ingin menghapus kegiatan ini?")
+        konfirmasi = confirm("Yakin nak ngapus bang?")
         if (konfirmasi) {
             return true;
         } else {
