@@ -24,7 +24,8 @@ function upload1()
     // cek apakah tidak ada gambar yg di upload
     if ($error === 4) {
         echo "<script>
-                alert('pilih gambar terlebih dahulu')
+                alert('pilih gambar terlebih dahulu');
+                window.location.href = '../../../index.php?page=inkepayang';
             </script>";
         return false;
     }
@@ -35,7 +36,8 @@ function upload1()
     $ekstensiGambar = strtolower(end($ekstensiGambar));
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>
-                alert('yang anda upload bukan gambar')
+                alert('yang anda upload bukan gambar');
+                window.location.href = '../../../index.php?page=inkepayang';
             </script>";
         return false;
     }

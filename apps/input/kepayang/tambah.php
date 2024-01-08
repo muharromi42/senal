@@ -3,10 +3,11 @@ session_start();
 
 // memanggil file functions
 include '../../../config/functions.php';
+// memanggil koneksi database
+include '../../../config/koneksi.php';
 
 if (isset($_POST['tambah_senal'])) {
-    // memanggil koneksi database
-    include '../../../config/koneksi.php';
+
 
     // fungsi untuk mencegah karakter inputan tidak sesuai
     function input($data)
@@ -36,6 +37,7 @@ if (isset($_POST['tambah_senal'])) {
             return false;
         }
 
+
         $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
 
         $simpan = mysqli_query($conn, $query);
@@ -49,6 +51,8 @@ if (isset($_POST['tambah_senal'])) {
         }
     }
 }
+
+
 ?>
 
 <form action="apps/input/kepayang/tambah.php" method="post" enctype="multipart/form-data">
