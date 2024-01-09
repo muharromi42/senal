@@ -49,31 +49,31 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=cekepayang" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Kepayang</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=cemedak" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Medak</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=cegeronggang" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Geronggang</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=ceputak" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Putak</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=cemuara" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Muara Merang</p>
               </a>
@@ -104,19 +104,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=ingeronggang" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Geronggang</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=inputak" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Putak</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="index.php?page=inmuara" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Desa Muara Merang</p>
               </a>
