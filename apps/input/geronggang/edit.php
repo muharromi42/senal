@@ -8,7 +8,7 @@ include('../../../config/functions.php'); // Sesuaikan dengan nama file fungsi q
 $id = $_POST['id'];
 
 // Query untuk mengambil data berdasarkan ID
-$data = query("SELECT * FROM tb_medak WHERE id = $id")[0];
+$data = query("SELECT * FROM tb_geronggang WHERE id = $id")[0];
 
 if (isset($_POST['edit_senal'])) {
     // fungsi untuk mencegah karakter inputan tidak sesuai
@@ -56,7 +56,7 @@ if (isset($_POST['edit_senal'])) {
         }
 
 
-        $query = "UPDATE tb_medak SET 
+        $query = "UPDATE tb_geronggang SET 
             pokmas = '$pokmas',
             kegiatan = '$kegiatan',
             progres = '$progres',
@@ -68,17 +68,17 @@ if (isset($_POST['edit_senal'])) {
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
-            header("Location:../../../index.php?page=inmedak&edit=berhasil");
+            header("Location:../../../index.php?page=ingeronggang&edit=berhasil");
         } else {
             mysqli_query($conn, "ROLLBACK");
-            header("Location:../../../index.php?page=inmedak&add=gagal");
+            header("Location:../../../index.php?page=ingeronggang&add=gagal");
         }
     }
 }
 ?>
 
 <!-- Formulir Edit Data -->
-<form action="apps/input/medak/edit.php" method="post" enctype="multipart/form-data">
+<form action="apps/input/geronggang/edit.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $data['id']; ?>">
     <div class="row">
         <div class="col-sm-6">

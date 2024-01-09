@@ -38,16 +38,16 @@ if (isset($_POST['tambah_senal'])) {
         }
 
 
-        $query = "INSERT INTO tb_medak VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
+        $query = "INSERT INTO tb_geronggang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
 
         $simpan = mysqli_query($conn, $query);
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
-            header("Location:../../../index.php?page=inmedak&add=berhasil");
+            header("Location:../../../index.php?page=ingeronggang&add=berhasil");
         } else {
             mysqli_query($conn, "ROLLBACK");
-            header("Location:../../../index.php?page=inmedak&add=gagal");
+            header("Location:../../../index.php?page=ingeronggang&add=gagal");
         }
     }
 }
@@ -55,7 +55,7 @@ if (isset($_POST['tambah_senal'])) {
 
 ?>
 
-<form action="apps/input/medak/tambah.php" method="post" enctype="multipart/form-data">
+<form action="apps/input/geronggang/tambah.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
