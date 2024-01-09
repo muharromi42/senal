@@ -8,7 +8,7 @@ include('../../../config/functions.php'); // Sesuaikan dengan nama file fungsi q
 $id = $_POST['id'];
 
 // Query untuk mengambil data berdasarkan ID
-$data = query("SELECT * FROM tb_kepayang WHERE id = $id")[0];
+$data = query("SELECT * FROM tb_medak WHERE id = $id")[0];
 
 if (isset($_POST['edit_senal'])) {
     // fungsi untuk mencegah karakter inputan tidak sesuai
@@ -56,7 +56,7 @@ if (isset($_POST['edit_senal'])) {
         }
 
 
-        $query = "UPDATE tb_kepayang SET 
+        $query = "UPDATE tb_medak SET 
             pokmas = '$pokmas',
             kegiatan = '$kegiatan',
             progres = '$progres',
@@ -68,29 +68,29 @@ if (isset($_POST['edit_senal'])) {
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
-            header("Location:../../../index.php?page=inkepayang&edit=berhasil");
+            header("Location:../../../index.php?page=inmedak&edit=berhasil");
         } else {
             mysqli_query($conn, "ROLLBACK");
-            header("Location:../../../index.php?page=inkepayang&add=gagal");
+            header("Location:../../../index.php?page=inmedak&add=gagal");
         }
     }
 }
 ?>
 
 <!-- Formulir Edit Data -->
-<form action="apps/input/kepayang/edit.php" method="post" enctype="multipart/form-data">
+<form action="apps/input/medak/edit.php" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $data['id']; ?>">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="pokmas">Pokmas:</label>
-                <input type="text" class="form-control" name="pokmas" value="<?= $data['pokmas']; ?>">
+                <input type="text" class="form-control" name="pokmas" value="<?= $data['pokmas']; ?>" autocomplete="off">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="progres">Progres:</label>
-                <input type="text" class="form-control" name="progres" value="<?= $data['progres']; ?>">
+                <input type="text" class="form-control" name="progres" value="<?= $data['progres']; ?>" autocomplete="off">
             </div>
         </div>
         <div class="col-sm-12">

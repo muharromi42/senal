@@ -38,16 +38,16 @@ if (isset($_POST['tambah_senal'])) {
         }
 
 
-        $query = "INSERT INTO tb_kepayang VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
+        $query = "INSERT INTO tb_medak VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
 
         $simpan = mysqli_query($conn, $query);
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
-            header("Location:../../../index.php?page=inkepayang&add=berhasil");
+            header("Location:../../../index.php?page=inmedak&add=berhasil");
         } else {
             mysqli_query($conn, "ROLLBACK");
-            header("Location:../../../index.php?page=inkepayang&add=gagal");
+            header("Location:../../../index.php?page=inmedak&add=gagal");
         }
     }
 }
@@ -55,18 +55,18 @@ if (isset($_POST['tambah_senal'])) {
 
 ?>
 
-<form action="apps/input/kepayang/tambah.php" method="post" enctype="multipart/form-data">
+<form action="apps/input/medak/tambah.php" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
                 <label>Pokmas :</label>
-                <input type="text" name="pokmas" class="form-control" placeholder="Masukan Nama Pokmas" required>
+                <input type="text" name="pokmas" class="form-control" placeholder="Masukan Nama Pokmas" required autocomplete="off">
             </div>
         </div>
         <div class="col-sm-6">
             <div class="form-group">
                 <label>Progres :</label>
-                <input type="text" name="progres" class="form-control" placeholder="Masukkan Progres" required>
+                <input type="text" name="progres" class="form-control" placeholder="Masukkan Progres" required autocomplete="off">
             </div>
         </div>
         <div class="col-sm-12">

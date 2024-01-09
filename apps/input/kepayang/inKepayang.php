@@ -168,7 +168,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 <script>
     // fungsi hapus senal
     $('.btn-hapus').on('click', function() {
-        konfirmasi = confirm("Yakin nak ngapus bang?")
+        konfirmasi = confirm("ingin menghapus data senal?")
         if (konfirmasi) {
             return true;
         } else {

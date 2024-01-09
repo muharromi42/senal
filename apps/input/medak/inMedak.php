@@ -1,6 +1,6 @@
 <?php
 
-$kepayang = query("SELECT * FROM tb_medak");
+$medak = query("SELECT * FROM tb_medak");
 
 ?>
 
@@ -10,12 +10,12 @@ $kepayang = query("SELECT * FROM tb_medak");
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Input Data Senal Kepayang</h1>
+                <h1>Input Data Senal Medak</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="index.php?page=dashboard">Home</a></li>
-                    <li class="breadcrumb-item active">Input Data Senal Kepayang</li>
+                    <li class="breadcrumb-item active">Input Data Senal Medak</li>
                 </ol>
             </div>
         </div>
@@ -74,7 +74,7 @@ $kepayang = query("SELECT * FROM tb_medak");
                             </thead>
                             <tbody>
                                 <?php $i = 1 ?>
-                                <?php foreach ($kepayang as $row) : ?>
+                                <?php foreach ($medak as $row) : ?>
                                     <tr>
                                         <td><?= $i ?></td>
                                         <td><?= $row["pokmas"] ?></td>
@@ -84,7 +84,7 @@ $kepayang = query("SELECT * FROM tb_medak");
                                         <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                         <td>
                                             <button type="button" class="tombol_edit btn btn-warning" id="<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></button> |
-                                            <a class="btn btn-danger btn-hapus" href="apps/input/kepayang/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
+                                            <a class="btn btn-danger btn-hapus" href="apps/input/medak/hapus.php?id=<?= $row["id"] ?>"><i class="fas fa-trash"></i></a>
                                         </td>
                                     </tr>
                                     <?php $i++ ?>
@@ -133,11 +133,11 @@ $kepayang = query("SELECT * FROM tb_medak");
     // Tambah senal
     $('#tombol_tambah').on('click', function() {
         $.ajax({
-            url: 'apps/input/kepayang/tambah.php',
+            url: 'apps/input/medak/tambah.php',
             method: 'post',
             success: function(data) {
                 $('#tampil_data').html(data);
-                document.getElementById("judul").innerHTML = 'Tambah Data Progres Senal Kepayang';
+                document.getElementById("judul").innerHTML = 'Tambah Data Progres Senal medak';
             }
         });
         // Membuka modal
@@ -150,7 +150,7 @@ $kepayang = query("SELECT * FROM tb_medak");
     $('.tombol_edit').on('click', function() {
         var id = $(this).attr("id");
         $.ajax({
-            url: 'apps/input/kepayang/edit.php',
+            url: 'apps/input/medak/edit.php',
             method: 'post',
             data: {
                 id: id
@@ -168,7 +168,7 @@ $kepayang = query("SELECT * FROM tb_medak");
 <script>
     // fungsi hapus senal
     $('.btn-hapus').on('click', function() {
-        konfirmasi = confirm("Yakin nak ngapus bang?")
+        konfirmasi = confirm("ingin menghapus data senal?")
         if (konfirmasi) {
             return true;
         } else {
