@@ -25,7 +25,7 @@ function upload1()
     if ($error === 4) {
         echo "<script>
                 alert('pilih gambar terlebih dahulu');
-                window.location.href = '../../../index.php?page=inkepayang';
+                window.history.back();
             </script>";
         return false;
     }
@@ -37,7 +37,7 @@ function upload1()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>
                 alert('yang anda upload bukan gambar');
-                window.location.href = '../../../index.php?page=inkepayang';
+                window.history.back();
             </script>";
         return false;
     }
@@ -63,7 +63,7 @@ function upload2()
     if ($error === 4) {
         echo "<script>
                 alert('pilih gambar terlebih dahulu');
-                window.location.href = '../../../index.php?page=inkepayang';
+                window.history.back();
             </script>";
         return false;
     }
@@ -75,6 +75,7 @@ function upload2()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo "<script>
                 alert('yang anda upload bukan gambar')
+                window.history.back();
             </script>";
         return false;
     }
