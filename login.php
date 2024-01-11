@@ -20,6 +20,9 @@ if (isset($_POST["login"])) {
 
         // cek password
         $row = mysqli_fetch_assoc($result);
+        // Tentukan level pengguna
+        $_SESSION["level"] = $row['level'];
+        $_SESSION["username"] = $row['username'];
         // set session
         $_SESSION["login"] = true;
 
