@@ -138,7 +138,7 @@ require 'config/functions.php';
         <!-- Page specific script -->
         <script>
             $(function() {
-                $("#example1").DataTable({
+                $("#table1").DataTable({
                     "responsive": true,
                     "lengthChange": false,
                     "autoWidth": false,
