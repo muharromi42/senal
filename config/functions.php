@@ -14,6 +14,87 @@ function query($query)
     return $rows;
 }
 
+// fungsi menghitung jumlah data kepayang
+function hitungJumlahKepayang($conn)
+{
+    // Query untuk menghitung jumlah data
+    $jumlah = "SELECT COUNT(*) as total FROM tb_kepayang";
+    $result = mysqli_query($conn, $jumlah);
+
+    // Ambil hasil query
+    $data = mysqli_fetch_assoc($result);
+
+    // Simpan jumlah data dalam variabel
+    $totalDataKepayang = $data['total'];
+
+    return $totalDataKepayang;
+}
+
+// fungsi menghitung jumlah data kepayang
+function hitungJumlahMedak($conn)
+{
+    // Query untuk menghitung jumlah data
+    $jumlah = "SELECT COUNT(*) as total FROM tb_medak";
+    $result = mysqli_query($conn, $jumlah);
+
+    // Ambil hasil query
+    $data = mysqli_fetch_assoc($result);
+
+    // Simpan jumlah data dalam variabel
+    $totalDataMedak = $data['total'];
+
+    return $totalDataMedak;
+}
+
+// fungsi menghitung jumlah data kepayang
+function hitungJumlahgeronggang($conn)
+{
+    // Query untuk menghitung jumlah data
+    $jumlah = "SELECT COUNT(*) as total FROM tb_geronggang";
+    $result = mysqli_query($conn, $jumlah);
+
+    // Ambil hasil query
+    $data = mysqli_fetch_assoc($result);
+
+    // Simpan jumlah data dalam variabel
+    $totalDataGeronggang = $data['total'];
+
+    return $totalDataGeronggang;
+}
+
+// fungsi menghitung jumlah data kepayang
+function hitungJumlahPutak($conn)
+{
+    // Query untuk menghitung jumlah data
+    $jumlah = "SELECT COUNT(*) as total FROM tb_putak";
+    $result = mysqli_query($conn, $jumlah);
+
+    // Ambil hasil query
+    $data = mysqli_fetch_assoc($result);
+
+    // Simpan jumlah data dalam variabel
+    $totalDataPutak = $data['total'];
+
+    return $totalDataPutak;
+}
+
+// fungsi menghitung jumlah data kepayang
+function hitungJumlahMuara($conn)
+{
+    // Query untuk menghitung jumlah data
+    $jumlah = "SELECT COUNT(*) as total FROM tb_muara";
+    $result = mysqli_query($conn, $jumlah);
+
+    // Ambil hasil query
+    $data = mysqli_fetch_assoc($result);
+
+    // Simpan jumlah data dalam variabel
+    $totalDataMuara = $data['total'];
+
+    return $totalDataMuara;
+}
+
+
 // fungsi upload gambar
 function upload1()
 {
