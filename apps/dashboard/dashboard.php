@@ -32,7 +32,7 @@ $totalDataMuara = hitungJumlahMuara($conn);
     <div class="container-fluid">
 
         <!-- Small Box (Stat card) -->
-        <h5 class="mb-2 mt-4">Jumlah Sekat Kanal</h5>
+        <h5 class="mb-2 mt-4">Jumlah Data Sekat Kanal</h5>
         <?php if ($_SESSION['level'] == "pimpinan") : ?>
             <div class="row">
                 <div class="col-lg-3 col-6">
