@@ -28,6 +28,32 @@ $users = query('SELECT * FROM users LIMIT 1000 OFFSET 1');
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
+                        <?php
+                        // jika menambahkan data sekat kanal maka akan muncul notif berhasil
+                        if (isset($_GET['add'])) {
+                            if ($_GET['add'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Anggota Telah Disimpan</div>";
+                            } else if ($_GET['add'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Anggota Gagal Disimpan</div>";
+                            }
+                        }
+                        // Jika tombol edit berhasil maka akan muncul notif
+                        if (isset($_GET['edit'])) {
+                            if ($_GET['edit'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Anggota Telah Diupdate</div>";
+                            } else if ($_GET['edit'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Anggota Gagal Diupdate</div>";
+                            }
+                        }
+                        // jika tombol hapus ditekan muncul notif berhasil
+                        if (isset($_GET['hapus'])) {
+                            if ($_GET['hapus'] == 'berhasil') {
+                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Anggota Telah Dihapus</div>";
+                            } else if ($_GET['hapus'] == 'gagal') {
+                                echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Anggota Gagal Dihapus</div>";
+                            }
+                        }
+                        ?>
                         <button type="button" class="btn btn-success" id="tombol_tambah_akun"><i class="fas fa-plus"></i> Tambah Akun</button>
                     </div>
                     <!-- /.card-header -->
@@ -67,3 +93,74 @@ $users = query('SELECT * FROM users LIMIT 1000 OFFSET 1');
         <!-- /.row -->
     </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title" id="judul"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <div id="tampil_data">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Data akan di load menggunakan AJAX -->
+<script>
+    // Tambah Anggota
+    $('#tombol_tambah_akun').on('click', function() {
+        $.ajax({
+            url: 'apps/anggota/tambah.php',
+            method: 'post',
+            success: function(data) {
+                $('#tampil_data').html(data);
+                document.getElementById("judul").innerHTML = 'Tambah Data Anggota';
+            }
+        });
+        // Membuka modal
+        $('#modal').modal('show');
+    });
+</script>
+
+<script>
+    // Edit Anggota
+    $('.tombol_edit').on('click', function() {
+        var id = $(this).attr("id");
+        $.ajax({
+            url: 'apps/anggota/edit.php',
+            method: 'post',
+            data: {
+                id: id
+            },
+            success: function(data) {
+                $('#tampil_data').html(data);
+                document.getElementById("judul").innerHTML = 'Edit Anggota';
+            }
+        });
+        // Membuka modal
+        $('#modal').modal('show');
+    });
+</script>
+
+<script>
+    // fungsi hapus anggota
+    $('.btn-hapus').on('click', function() {
+        konfirmasi = confirm("ingin menghapus data anggota?")
+        if (konfirmasi) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+</script>

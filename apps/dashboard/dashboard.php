@@ -25,11 +25,11 @@
         <div class="row">
             <div class="col-lg-3 col-6">
                 <!-- small card -->
-                <div class="small-box bg-info">
+                <div class="small-box" style="background-color: #0174BE">
                     <div class="inner">
-                        <h3 class="d-flex justify-content-center ">3</h3>
+                        <h3 class="d-flex justify-content-center " style="color: #ffff;">3</h3>
 
-                        <p class="d-flex justify-content-center ">Desa Kepayang</p>
+                        <p class="d-flex justify-content-center font-weight-bold" style="color: #ffff;">Desa Kepayang</p>
                     </div>
                     <a href="#" class="small-box-footer">
                         Lihat Selengkapnya <i class="fas fa-arrow-circle-right"></i>
@@ -39,7 +39,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small card -->
-                <div class="small-box bg-success">
+                <div class="small-box" style="background-color: #0174BE">
                     <div class="inner">
                         <h3>3</h3>
 
@@ -53,7 +53,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small card -->
-                <div class="small-box bg-warning">
+                <div class="small-box" style="background-color: #0174BE">
                     <div class="inner">
                         <h3>2</h3>
 
@@ -67,7 +67,7 @@
             <!-- ./col -->
             <div class="col-lg-3 col-6">
                 <!-- small card -->
-                <div class="small-box bg-danger">
+                <div class="small-box" style="background-color: #0174BE">
                     <div class="inner">
                         <h3>1</h3>
 
@@ -80,7 +80,7 @@
             </div>
             <div class="col-lg-3 col-6">
                 <!-- small card -->
-                <div class="small-box bg-danger">
+                <div class="small-box" style="background-color: #0174BE">
                     <div class="inner">
                         <h3>7</h3>
 

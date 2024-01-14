@@ -146,7 +146,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
 </script>
 
 <script>
-    // Edit Mahasiswa
+    // Edit Senal
     $('.tombol_edit').on('click', function() {
         var id = $(this).attr("id");
         $.ajax({
