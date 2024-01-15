@@ -91,7 +91,7 @@ require 'config/functions.php';
                     case 'anggota';
                         include "apps/anggota/anggota.php";
                     default:
-                        echo "<center><h3>Maaf. Halaman Tidak Di Temukan !</h3></center>";
+
                         break;
                 }
             }
