@@ -3,7 +3,7 @@
 require_once __DIR__ . '../../../../plugins/vendor/autoload.php';
 require '../../../config/koneksi.php';
 require '../../../config/functions.php';
-$kepayang = query("SELECT * FROM tb_kepayang");
+$putak = query("SELECT * FROM tb_putak");
 
 
 $mpdf = new \Mpdf\Mpdf();
@@ -12,7 +12,7 @@ $html = '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Daftar Sekat Kanal Kepayang</title>
+    <title>Daftar Sekat Kanal putak</title>
     <style>
         table {
             width: 100%;
@@ -32,7 +32,7 @@ $html = '<!DOCTYPE html>
     </style>
 </head>
 <body>
-    <h1 style="text-align: center">Daftar Data Sekat Kanal Kepayang</h1>
+    <h1 style="text-align: center">Daftar Data Sekat Kanal putak</h1>
     <br/>
     <table id="table1" class="table table-bordered table-striped" style="font-size: 14px;">
                             <thead>
@@ -47,7 +47,7 @@ $html = '<!DOCTYPE html>
                                 </tr>
                             </thead>';
 $i = 1;
-foreach ($kepayang as $row) {
+foreach ($putak as $row) {
     $html .= '  <tbody>
 <tr>
     <td>' . $i++ . '</td>
@@ -66,5 +66,5 @@ $html .= ' </table>
 
 $mpdf->WriteHTML($html);
 // Mengatur nama file yang diunduh
-$namaFile = 'Daftar_Sekat_Kanal_Kepayang.pdf';
+$namaFile = 'Daftar_Sekat_Kanal_Medak.pdf';
 $mpdf->Output($namaFile, 'I');

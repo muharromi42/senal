@@ -86,7 +86,7 @@ require 'config/functions.php';
                         include "apps/cetak/putak/cePutak.php";
                         break;
                     case 'cemuara';
-                        include "apps/cetak/ceMuara.php";
+                        include "apps/cetak/muara/ceMuara.php";
                         break;
                     case 'anggota';
                         include "apps/anggota/anggota.php";
