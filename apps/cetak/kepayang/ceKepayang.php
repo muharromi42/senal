@@ -29,7 +29,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn btn-success" id="tombol_cetak"><i class="fas fa-print"></i> Cetak Data</button>
+                        <button type="submit" class="btn btn-success" name="cetak" id="cetak"><i class="fas fa-print"></i> Cetak Data</button>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body p-1">
@@ -70,3 +70,9 @@ $kepayang = query("SELECT * FROM tb_kepayang");
         <!-- /.row -->
     </div>
 </section>
+
+<script>
+    document.getElementById('cetak').addEventListener('click', function() {
+        window.open('apps/cetak/kepayang/cetak.php', '_blank');
+    });
+</script>
