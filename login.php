@@ -142,6 +142,8 @@ if (isset($_POST["login"])) {
             }
         }
     </style>
+    <!-- logo icon tab -->
+    <link rel="shortcut icon" href="assets/img/psda_transparan.png">
 </head>
 
 <body>

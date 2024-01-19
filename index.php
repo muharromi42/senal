@@ -109,10 +109,8 @@ require 'config/functions.php';
         </aside>
         <!-- /.control-sidebar -->
 
-
         <!-- ./wrapper -->
 
-        <!-- REQUIRED SCRIPTS -->
 
         <!-- jQuery -->
         <script src="plugins/jquery/jquery.min.js"></script>
@@ -135,7 +133,7 @@ require 'config/functions.php';
         <script src="dist/js/adminlte.min.js"></script>
         <!-- bs-custom-file-input -->
         <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
-        <!-- Page specific script -->
+
         <script>
             $(function() {
                 $("#table1").DataTable({

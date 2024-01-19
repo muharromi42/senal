@@ -1,7 +1,7 @@
 <?php
 // Import file koneksi dan fungsi query
-include('../../../config/koneksi.php'); // Sesuaikan dengan nama file koneksi Anda
-include('../../../config/functions.php'); // Sesuaikan dengan nama file fungsi query Anda
+include('../../../config/koneksi.php');
+include('../../../config/functions.php');
 
 
 // Ambil ID dari AJAX request

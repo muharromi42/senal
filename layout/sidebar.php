@@ -3,7 +3,7 @@
 
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-warning elevation-4 pb-4 " style="background-color: #0174BE">
-  <!-- Brand Logo -->
+
   <a href="#" class="brand-link text-center ">
     <span class="brand-text font-weight-bold">Dinas PSDA Sumsel</span>
   </a>

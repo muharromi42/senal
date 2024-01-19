@@ -43,10 +43,10 @@ if (isset($_POST['tambah_anggota'])) {
 
         if ($simpan) {
             mysqli_query($conn, "COMMIT");
-            header("Location:../../index.php?page=anggota&add=berhasil");
+            header("Location:../../index.php?page=anggota&edit=berhasil");
         } else {
             mysqli_query($conn, "ROLLBACK");
-            header("Location:../../index.php?page=anggota&add=gagal");
+            header("Location:../../index.php?page=anggota&edit=gagal");
         }
     }
 }

@@ -1,7 +1,7 @@
 <?php
 // Import file koneksi dan fungsi query
-include('../../../config/koneksi.php'); // Sesuaikan dengan nama file koneksi Anda
-include('../../../config/functions.php'); // Sesuaikan dengan nama file fungsi query Anda
+include('../../../config/koneksi.php');
+include('../../../config/functions.php');
 
 
 // Ambil ID dari AJAX request
@@ -135,7 +135,7 @@ if (isset($_POST['edit_senal'])) {
 </style>
 
 <script>
-    // Function to trigger file input when "Choose Image" button is clicked
+    // fungsi jika mengklik tombol pilih foto1
     $(document).on("click", "#pilih_foto1", function() {
         var file = $(this).parents().find("#file1");
         file.trigger("click");
