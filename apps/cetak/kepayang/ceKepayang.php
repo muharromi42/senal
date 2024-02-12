@@ -40,6 +40,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                     <th width="100px">Pokmas</th>
                                     <th width="200px">Kegiatan</th>
                                     <th width="50px">Progres</th>
+                                    <th>Tanggal</th>
                                     <th colspan="2">
                                         <center>Dokumentasi</center>
                                     </th>
@@ -53,6 +54,7 @@ $kepayang = query("SELECT * FROM tb_kepayang");
                                         <td><?= $row["pokmas"] ?></td>
                                         <td><?= $row["kegiatan"] ?></td>
                                         <td><?= $row["progres"] ?> %</td>
+                                        <td><?= $row["tanggal"] ?></td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="200" alt=""></td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                     </tr>
