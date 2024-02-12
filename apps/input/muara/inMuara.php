@@ -49,7 +49,7 @@ $muara = query("SELECT * FROM tb_muara");
                         // jika tombol hapus ditekan muncul notif berhasil
                         if (isset($_GET['hapus'])) {
                             if ($_GET['hapus'] == 'berhasil') {
-                                echo "<div class='alert alert-success'><strong>Berhasil!</strong> Data Sekat Kanal Telah Dihapus</div>";
+                                echo "<div class='alert alert-danger'><strong>Berhasil!</strong> Data Sekat Kanal Telah Dihapus</div>";
                             } else if ($_GET['hapus'] == 'gagal') {
                                 echo "<div class='alert alert-danger'><strong>Gagal!</strong> Data Sekat Kanal Gagal Dihapus</div>";
                             }
@@ -66,6 +66,7 @@ $muara = query("SELECT * FROM tb_muara");
                                     <th width="100px">Pokmas</th>
                                     <th width="200px">Kegiatan</th>
                                     <th width="50px">Progres</th>
+                                    <th>Tanggal</th>
                                     <th colspan="2">
                                         <center>Dokumentasi</center>
                                     </th>
@@ -80,6 +81,7 @@ $muara = query("SELECT * FROM tb_muara");
                                         <td><?= $row["pokmas"] ?></td>
                                         <td><?= $row["kegiatan"] ?></td>
                                         <td><?= $row["progres"] ?> %</td>
+                                        <td><?= $row["tanggal"] ?></td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto1"] ?>" width="200" alt=""></td>
                                         <td><img src="assets/dokumentasi/<?= $row["foto2"] ?>" width="200" alt=""></td>
                                         <td>

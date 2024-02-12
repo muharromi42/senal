@@ -36,9 +36,12 @@ if (isset($_POST['tambah_senal'])) {
         if (!$gambar2) {
             return false;
         }
+        // Mendapatkan tanggal saat ini
+        $tanggal_sekarang = date("Y-m-d");
 
 
-        $query = "INSERT INTO tb_medak VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2')";
+        $query = "INSERT INTO tb_medak VALUES ('','$pokmas','$kegiatan','$progres','$gambar1','$gambar2','$tanggal_sekarang')";
+
 
         $simpan = mysqli_query($conn, $query);
 
